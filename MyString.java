@@ -7,6 +7,7 @@ public class MyString {
         System.out.println("lowercase : " + lowerCase("lowercase"));
 
         System.out.println("Testing contains:");
+        
         System.out.println(contains("unhappy", "happy")); // true
         System.out.println(contains("happy", "unhappy")); // false
         System.out.println(contains("historical", "story")); // false
@@ -14,6 +15,7 @@ public class MyString {
         System.out.println(contains("personality", "son")); // true
         System.out.println(contains("personality", "dad")); // false
         System.out.println(contains("resignation", "sign")); // true
+    
     }
 
     /** Returns the lowercase version of the given string. */
@@ -26,20 +28,29 @@ public class MyString {
     public static boolean contains(String str1, String str2) {
         int length1 = str1.length();
         int length2 = str2.length();
-        if (length1 > length2) {
+        if (length2 == 0){
+            return true;
+        }
+        if (length1 >= length2) {
             for (int i = 0; i < length1; i++) {
                 for (int j = 0; j < length2; j++) {
-                    if ( length1 - i < length2 - j) {
+                    /*if ( length1 - i < length2 - j) { // checking if length1 is long enough to contain length2
+                        System.out.println(1);
                         return false;
-                    }
+                    }*/
                     if (str1.charAt(i + j) == str2.charAt(j)) {
+                        //System.out.println(str1.charAt(i + j) + " this is equall to this " + str2.charAt(j)); // for debuging
                        if ( j == length2 - 1) {
-                         return true;
-                      }
+                        //System.out.println(1); // for debuging
+                        return true;
+                        }
+                    }  else {
+                            break;
+                       }
                     }
                 }
             }
-        }
+        //System.out.println(2);  // for debuging
         return false;
     }
 }
