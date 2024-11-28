@@ -16,11 +16,28 @@ public class KeywordsDetector {
         // Some keywords that typically signal bullshit contents in business presentations 
         String[] keywords = {"synergy", "disrupt", "leverage", "Paradigm", "transform"};
         detectAndPrint(sentences, keywords);
-    }
+    } 
 
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
-        // Replace this comment with your code
+        int length1 = sentences.length;
+        int length2 = keywords.length;
+        String[] sentences2 = new String[length1];
+        String[] keywords2 = new String[length2];
+        for (int i = 0; i < length1; i++) {
+            sentences2[i] = sentences[i].toLowerCase();
+        }
+        for (int i = 0; i < length2; i++) {
+            keywords2[i] = keywords[i].toLowerCase();
+        }
+        for (int i = 0; i < length1; i++) {
+            for ( int j = 0; j < length2; j++) {
+                if (MyString.contains(sentences2[i],keywords2[j])) {
+                    System.out.println(sentences[i]);
+                    break; // break out of inner loop if a keyword is found in a sentence
+                }
+            }
+         }
     }
 }
