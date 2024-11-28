@@ -1,6 +1,7 @@
 public class Primes {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
+        System.out.println("Prime numbers up to " + n + ":");
         boolean[] primes = new boolean[n]; // creates a new array type boolean with length of n
         for (int i = 0; i < n; i++) {
             primes[i] = true; // initializes all elements in the array to true
@@ -32,7 +33,6 @@ public class Primes {
             }
         }
         int x = (int)((counter2/n) * 100);
-
         System.out.println("There are " + (int)counter2 + " primes between 2 and " + n + ". ("+ x +"% are primes)");
         /* for (int i3 = 0; i3 < n; i3++) {
             System.out.println(primes[i3]);
