@@ -33,7 +33,7 @@ public class Primes {
         }
         int x = (int)((counter2/n) * 100);
 
-        System.out.println("There are " + counter2 + " primes between 2 and " + n + ". ("+ x +"% are primes)");
+        System.out.println("There are " + (int)counter2 + " primes between 2 and " + n + ". ("+ x +"% are primes)");
         /* for (int i3 = 0; i3 < n; i3++) {
             System.out.println(primes[i3]);
         } This prints out the values of the arrey inorder to trubleshoot if needed */
